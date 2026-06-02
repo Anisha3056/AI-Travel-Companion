@@ -121,7 +121,7 @@ airbnb-recommendation-system/
 
 Clone the repository:
 
-git clone <repository-url>
+git clone https://github.com/Anisha3056/AI-Travel-Companion
 
 Navigate to project:
 
