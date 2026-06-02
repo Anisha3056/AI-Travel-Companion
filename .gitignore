@@ -1,0 +1,13 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# React
+node_modules/
+
+# Large datasets
+data/new_orleans_airbnb_reviews.csv
+
+# VS Code
+.vscode/
