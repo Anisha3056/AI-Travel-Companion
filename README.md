@@ -111,8 +111,6 @@ airbnb-recommendation-system/
 
 │ ├── new_orleans_airbnb_listings.csv
 
-│ └── new_orleans_airbnb_reviews.csv
-
 ├── requirements.txt
 
 └── README.md
@@ -191,6 +189,12 @@ Returns complete information about a selected Airbnb property.
 * Personalized Recommendation History
 
 ---
+
+## NOTE 
+The original reviews dataset is excluded from the repository
+because it exceeds GitHub's file size limit.
+Preprocessed embeddings and model artifacts are included
+so the application can run without the raw reviews file.
 
 ## Author
 
