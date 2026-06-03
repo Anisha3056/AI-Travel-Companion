@@ -70,6 +70,9 @@ def hybrid_airbnb_search(
     print("Filtered embeddings shape:", filtered_embeddings.shape)
     
     similarities = cosine_similarity(query_embedding, filtered_embeddings)
+    
+    print("Query:", query_embedding.shape)
+    print("Filtered:", filtered_embeddings.shape)
 
     sim_scores = list(enumerate(similarities[0]))
     sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
