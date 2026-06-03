@@ -8,6 +8,7 @@ import RecommendationCard from "./components/RecommendationCard";
 import PropertyModal from "./components/PropertyModal";
 import Footer from "./components/Footer";
 
+const API_BASE_URL = "https://ai-travel-companion-production-61d7.up.railway.app";
 
 function EmptyState() {
   return (
@@ -45,7 +46,7 @@ function App() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/recommend",
+        `${API_BASE_URL}/recommend`,
         {
           query,
           max_price: maxPrice,
@@ -79,7 +80,7 @@ function App() {
   try {
 
     const response = await axios.get(
-      `http://127.0.0.1:8000/property/${propertyId}`
+      `${API_BASE_URL}/property/${propertyId}`
     );
 
     setSelectedProperty(
