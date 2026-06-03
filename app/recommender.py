@@ -6,11 +6,23 @@ from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Load model
-model = SentenceTransformer("all-MiniLM-L6-v2")
+model = None
+
+def get_model():
+
+    global model
+
+    if model is None:
+
+        model = SentenceTransformer(
+            "all-MiniLM-L6-v2"
+        )
+
+    return model
 
 # Load dataframe and embeddings
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-embeddings = np.load(os.path.join(BASE_DIR, "models", "embeddings.npy"))
+embeddings = np.load(os.path.join(BASE_DIR, "models", "embeddings.npy"), mmap_mode="r")
 airbnb_merged = joblib.load(os.path.join(BASE_DIR, "models", "airbnb_data.pkl"))
 
 
@@ -50,7 +62,7 @@ def hybrid_airbnb_search(
         return []
 
     # Vector Search
-    query_embedding = model.encode([query])
+    query_embedding = get_model().encode(query)
     filtered_embeddings = embeddings[filtered_df.index]
     similarities = cosine_similarity(query_embedding, filtered_embeddings)
 
