@@ -93,15 +93,28 @@ The interface automatically identifies travel themes such as:
 
 ## Architecture
 
-React Frontend
-       ↓
-FastAPI Backend
-       ↓
-Sentence Transformers
-       ↓
+```text
+User Query
+      │
+      ▼
+Sentence Transformer
+      │
+      ▼
+Semantic Embeddings
+      │
+      ▼
 Cosine Similarity Search
-       ↓
-Airbnb Dataset
+      │
+      ▼
+Apply Filters
+(Budget, Rating, Guests, Amenities)
+      │
+      ▼
+Top Airbnb Recommendations
+      │
+      ▼
+React Frontend Display
+```
 
 ---
 
