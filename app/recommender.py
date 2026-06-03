@@ -62,8 +62,13 @@ def hybrid_airbnb_search(
         return []
 
     # Vector Search
-    query_embedding = get_model().encode(query)
+    query_embedding = get_model().encode(query).reshape(1, -1)
     filtered_embeddings = embeddings[filtered_df.index]
+    
+    print("Query embedding shape:", query_embedding.shape)
+    print("Embeddings shape:", embeddings.shape)
+    print("Filtered embeddings shape:", filtered_embeddings.shape)
+    
     similarities = cosine_similarity(query_embedding, filtered_embeddings)
 
     sim_scores = list(enumerate(similarities[0]))
