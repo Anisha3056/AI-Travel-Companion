@@ -18,9 +18,13 @@ The system understands the intent behind the query and recommends the most relev
 
 Users can describe their ideal stay using natural language instead of exact keywords.
 
-### AI-Powered Recommendations
+### AI Features
 
-Uses Sentence Transformers embeddings and cosine similarity to find listings that best match user intent.
+- Semantic search using Sentence Transformers
+- Natural language queries
+- Embedding-based recommendation engine
+- Cosine similarity ranking
+- Hybrid filtering using price, rating, guests and amenities
 
 ### Smart Filtering
 
@@ -87,6 +91,20 @@ The interface automatically identifies travel themes such as:
 
 ---
 
+## Architecture
+
+React Frontend
+       ↓
+FastAPI Backend
+       ↓
+Sentence Transformers
+       ↓
+Cosine Similarity Search
+       ↓
+Airbnb Dataset
+
+---
+
 ## 📂 Project Structure
 
 airbnb-recommendation-system/
@@ -114,6 +132,13 @@ airbnb-recommendation-system/
 ├── requirements.txt
 
 └── README.md
+
+---
+
+## Live Backend API
+
+Swagger Documentation:
+https://ai-travel-companion-production-61d7.up.railway.app/docs
 
 ---
 
@@ -178,6 +203,27 @@ GET /property/{property_id}
 Returns complete information about a selected Airbnb property.
 
 ---
+
+### Pictures of working website
+
+## Home page
+![Home page](image.png)
+
+## Semantic search results
+![Remote work search query](image-1.png)
+![Romantic stays search query](image-2.png)
+
+## Filters
+![Available filters](image-3.png)
+
+## Property Details modal
+![Details of the property card](image-4.png)
+
+## No results card
+![No results display card](image-5.png)
+
+---
+
 
 ## Future Improvements
 
