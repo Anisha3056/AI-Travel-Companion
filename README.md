@@ -155,6 +155,12 @@ https://ai-travel-companion-production-61d7.up.railway.app/docs
 
 ---
 
+## Working demo video link
+
+https://drive.google.com/file/d/1r3KgUaFbxSJi-tbLIGXDykjCgirpca8C/view?usp=sharing
+
+---
+
 ## ⚙️ Installation
 
 Clone the repository:
